@@ -1,3 +1,4 @@
+import globalData from "./state.js";
 //  监听路由变化 正确加载子应用
 const events = ["hashchange", "popstate"];
 export function start() {
@@ -67,7 +68,7 @@ function mountingApp(obj) {
       return res;
     })
     .then((res) => {
-      return res.mount();
+      return res.mount({ operate: globalData.operate });
     })
     .then(() => {
       console.log(`${obj.name} just mounting`);

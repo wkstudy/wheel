@@ -4,6 +4,13 @@ export function bootstrap(props) {
   return Promise.resolve();
 }
 export function mount(props) {
+  props.operate.setState({ name: "wk" });
+  props.operate.onStateChange((state, prev) => {
+    console.log("子应用发现state改变了，来做点什么吧");
+    console.log(state, "state");
+    console.log(prev, "prev");
+  });
+
   return Promise.resolve().then(() => {
     // 在这里通常使用框架将ui组件挂载到dom。请参阅https://single-spa.js.org/docs/ecosystem.html。
     domEl = document.getElementById("app1");
