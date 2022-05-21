@@ -53,6 +53,18 @@ server {
 2.  访问`http://ip:port`、`http://ip:port/son1`、`http://ip:port/son2`
 3.  这里是我部署的[效果](http://139.196.89.228:7000)
 
+## 自己实现路由加载功能
+
+1. `single-spa-config.js` 不再引入打包的 single-spa, 而引入自己写的 `my-single-spa.js`， 依然可以正常运行
+2. 只实现了自己认为是最关键的主流程，保证能基本运行
+
+## 实现 qiankun 的全局通信
+
+1. 在分支 `feature-message` 上，可以实现任何一个应用（父/子）可以改变全局 state、并监听到 state 的改变
+   1. 父应用点击文本‘hello’，改变 state， 子应用监听到 state 改变并进行操作
+   2. 子应用加载完成就会改变 state，父应用也可监听到
+2. 只实现了自己认为是最关键的主流程，保证能基本运行，比如还可以做（监听事件和应用挂钩，在子应用 unmount 的时候把相关的监听事件去掉）
+
 ## 参考
 
 1. [可能是你见过最完善的微前端解决方案](https://zhuanlan.zhihu.com/p/78362028)
