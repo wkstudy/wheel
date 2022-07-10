@@ -14,6 +14,7 @@
 
 ### 目录
 
+```
 ├── app1 -- 子应用 1
 │ └── app1.js
 ├── app2 -- 子应用 2
@@ -24,6 +25,7 @@
 ├── single-spa.dev.js.map
 ├── single-spa.min.js -- single-spa（本地 build:prod single-spa 后从 lib/esm 里获取的）
 └── single-spa.min.js.map
+```
 
 ### 运行方式
 
