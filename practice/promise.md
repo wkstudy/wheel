@@ -34,5 +34,5 @@ new Pledge((resolve) => resolve(1)).then((res) => console.log(res));
 
 思路二（目前的思路）
 
-3.  resolve 负责变更状态，其次是如果发现有回调函数，就帮 then 执行一下
-4.  then 负责执行回调函数，执行不了的（异步任务）就存起来让 resolve 帮着执行
+1.  resolve 负责变更状态，其次是如果发现有回调函数，就帮 then 执行一下
+2.  then 负责执行回调函数，执行不了的（异步任务）就存起来让 resolve 帮着执行
