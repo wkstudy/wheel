@@ -11,7 +11,7 @@ new Promise((resolve) => setTimeout(resolve(1), 100)).then((res) => console.log(
 
 ### 其他
 
-Pledge 是自己的最初版实现，（出了不支持链式回调外）和 Pledge2 的一个区别就是回调函数都是在 resolve/reject 里执行的
+Pledge 是自己的最初版实现，（除了不支持链式回调外）和 Pledge2 的一个区别就是回调函数都是在 resolve/reject 里执行的
 
 ```
 <!-- 这样是没问题的 -->
@@ -26,6 +26,7 @@ new Pledge((resolve) => resolve(1)).then((res) => console.log(res));
 ```
 
 所以 Pledge 里自己的思路是有问题的
+
 思路一（错误思路）（同步的 resolve 函数会报错）
 
 1.  resolve 负责 状态变更 +执行回调函数
